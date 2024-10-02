@@ -5,7 +5,7 @@
 */
 
 //class definition
-public class MyFirstProgram{ 
+public class MyFirstProgramm{ 
 	//mispelling
 	//main method header
 	public static void main(String args[]){ // missing the closed [], main was capitalize
