@@ -32,7 +32,7 @@ public class RockPaperScissorsApp {
         msg = game.getMsg();
 
         // OUTPUT
-        JOptionPane.showMessageDialog(null, "User choice: " + userChoice + " computer choice: " + computerChoice + " " + msg);
+        JOptionPane.showMessageDialog(null, " Rock is 1 \n Paper is 2 \n Scissors is 3 \n User choice: " + userChoice + "\n Computer choice: " + computerChoice + "\n RESULT: " + msg );
 
     }
 }

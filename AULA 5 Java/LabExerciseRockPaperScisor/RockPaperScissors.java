@@ -30,41 +30,28 @@ public class RockPaperScissors{
     // Draw if both choose same
 
     public void resultGame(){
-        if(userChoice == 1){
-            if(computerChoice == 1){
-                msg = "Draw \n (user) Rock x Rock (computer)";
-            }
-            else if(computerChoice == 2){
-                msg = "Computer wins \n (user) Rock x Papper (computer)";
-            }
-            else{
-                msg = "User wins \n (user) Rock x Scissors(computer)";
-            }
-        }
-        else if(userChoice == 2){
-            if(computerChoice == 2){
-                msg = "Draw \n (user) Papper x Papper (computer)";
-            }
-            else if(computerChoice == 3){
-                msg = "Computer wins \n (user) Papper x Scissors (computer)";
-            }
-            else{
-                msg = "User wins \n (user) Papper x Rock(computer)";
-            }
-        }
 
-        else if(userChoice == 3){
-            if(computerChoice == 3){
-                msg = "Draw \n (user) Scissors x Scissors(computer)";
-            }
-            else if(computerChoice == 1 ){
-                msg = "Computer wins \n (user) Scissors x Rock (computer)";
-            }
-            else{
-                msg = "User wins \n (user) Scissors x Paper(computer)";
-            }
+        // Draw if both choose same
+        if(userChoice == computerChoice){
+            msg = "Draw";
         }
+        // Check each possibility the user has
+        // Select all possibilities that user wins
+        else if((userChoice == 1 && computerChoice == 3) ||
+                (userChoice == 2 && computerChoice == 1) ||
+                (userChoice == 3 && computerChoice == 2)){
+                msg = "User Wins";
+                }
 
+        // Check each possibility the computer has
+        // Select all possibilities that computer wins
+        else if((computerChoice == 1 && userChoice == 3) ||
+                (computerChoice == 2 && userChoice == 1) ||
+                (computerChoice == 3 && userChoice == 2)){
+                msg = "Computer Wins";
+                }
+
+        // Check if user selecte an invalid option
         else{
             System.out.println("Invalid entry");
             msg = ("Invalid entry");
