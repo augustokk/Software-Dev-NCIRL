@@ -6,6 +6,7 @@
 // The application should then output their average result
 // Bonus: Tell the user their grade from A-F based on their results
 
+//CREATED ONLY 1 FILE BECAUSE THIS WAS HOW WAS SHOWED THE LOOPS IN THE VIDEO CLASS
 import javax.swing.JOptionPane;
 
 public class AverageResultApp {

@@ -6,6 +6,7 @@
 // Bonus: The loop should stop if the user gets the correct answer
 // Bonus: The game should alter the random number each turn
 
+//CREATED ONLY 1 FILE BECAUSE THIS WAS HOW WAS SHOWED THE LOOPS IN THE VIDEO CLASS
 import java.util.Random;
 import javax.swing.JOptionPane;
 
