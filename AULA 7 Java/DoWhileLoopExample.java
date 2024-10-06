@@ -3,7 +3,7 @@ import javax.swing.JOptionPane;
 
 public class DoWhileLoopExample{
     public static void main(String[] args){
-        int userInput = 0;
+        int userInput;
 
         do{
             userInput = Integer.parseInt(JOptionPane.showInputDialog(null, "Enter a number: "));
