@@ -6,31 +6,44 @@ public class Results {
     private String[] students;
     private int numModules;
     private double[][] results;
+    private String msg;
 
     // CONSTRUCTOR
-    public Results(String[] students, int numModules) {
-        this.students = students;
-        this.numModules = numModules;
-        results = new double[students.length][numModules];
+    public Results() {
+        numModules = 0;
+        msg = "";
     }
 
     // SET
-    public void setResults() {
+    public void setNumModules(int numModules){
+        this.numModules = numModules;
+    }
+
+    public void setStudents(String [] students){
+        this.students = students;
+    }
+
+    public void setResults(double [][] results){
+        this.results = results;
+    }
+
+
+    // PROCESS
+    public void calculateResult() {
+        for (int i = 0; i < students.length; i = i + 1) {
+            for (int j = 0; j < numModules; j = j + 1) {
+                results[i][j] = Double.parseDouble(JOptionPane.showInputDialog(null, "Please enter result " + (j + 1) + " for the student: " + students[i]));
+            }
+        }
         for (int i = 0; i < students.length; i++) {
             for (int j = 0; j < numModules; j++) {
-                results[i][j] = Double.parseDouble(JOptionPane.showInputDialog(null, "Please enter result " + (j + 1) + " for the student: " + students[i]));
+                msg = msg + (students[i] + " result #" + (j + 1) + " is: " + results[i][j] + "\n");
             }
         }
     }
 
     // GET
-    public String getResults() {
-        StringBuilder resultDetails = new StringBuilder();
-        for (int i = 0; i < students.length; i++) {
-            for (int j = 0; j < numModules; j++) {
-                resultDetails.append(students[i] + " result #" + (j + 1) + " is: " + results[i][j] + "\n");
-            }
-        }
-        return resultDetails.toString();
+    public String getMsg() {
+        return msg;
     }
 }

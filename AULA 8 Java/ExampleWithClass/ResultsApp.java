@@ -1,20 +1,28 @@
 import javax.swing.JOptionPane;
-
 public class ResultsApp {
     public static void main(String[] args) {
 
         // DECLARE VARIABLES
         String[] students = {"Augusto", "Kenia", "Karen"};
         int numModules = 4;
+        double[][] results = new double [3][4];
+        String msg;
 
         // DECLARE AND CREATE OBJECTS
-        Results results = new Results(students, numModules);
+        Results r = new Results();
 
-        // INPUT and SET
-        results.setResults();
+        // SET
+        r.setNumModules(numModules);
+        r.setStudents(students);
+        r.setResults(results);
 
-        // GET and OUTPUT
-        String output = results.getResults();
-        JOptionPane.showMessageDialog(null, output);
+        // COMPUTE
+        r.calculateResult();
+
+        // GET 
+        msg = r.getMsg();
+
+        // OUTPUT
+        JOptionPane.showMessageDialog(null, msg);
     }
 }
