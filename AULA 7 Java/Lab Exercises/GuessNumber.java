@@ -5,6 +5,7 @@
 // Create an application that generates an array of 5 random numbers 1-10. The user should then guess a number and the app will tell them how many time that number exists within the array.
 
 import java.util.Random;
+import javax.swing.JOptionPane;
 public class GuessNumber{
 
     // DECLARE VARIABLES
@@ -46,6 +47,10 @@ public class GuessNumber{
             totalGuessed = totalGuessed + 1;
             }
         }
+    }
+    
+    public void printMsg(){
+        JOptionPane.showMessageDialog(null, " This is the user number: " + userNumber +  "\n This are the computer numbers: " + msg + "\n This are the total guessed: " + totalGuessed );
     }
 
     // GET

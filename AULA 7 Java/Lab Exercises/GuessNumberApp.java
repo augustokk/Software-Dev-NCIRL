@@ -31,6 +31,7 @@ public class GuessNumberApp{
         msg = n.getMsg();
 
         //OUTPUT
-        JOptionPane.showMessageDialog(null, " This is the user number: " + userNumber +  "\n This are the computer numbers: " + msg + "\n This are the total guessed: " + totalGuessed );
+        n.printMsg();
+
     }
 }

@@ -1,3 +1,6 @@
+
+import javax.swing.JOptionPane;
+
 public class Numbers{
 
     // DECLARE VARIABLES
@@ -23,8 +26,15 @@ public class Numbers{
         } 
     }
 
+    public void printMsg(){
+        for(int i = 0; i < initialNumbers.length; i = i + 1) {
+            JOptionPane.showMessageDialog(null, initialNumbers[i] + " times 9 is " + finalNumbers [i]);
+        }
+    }
+
     // GET
     public int [] getFinalNumber(){
         return finalNumbers;
     }
+    
 }

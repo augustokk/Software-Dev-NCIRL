@@ -26,9 +26,7 @@ public class NumbersApp{
         finalNumbers = n.getFinalNumber();
 
         //OUTPUT
-        for(int i = 0; i < initialNumbers.length; i = i + 1 ){
-            JOptionPane.showMessageDialog(null, initialNumbers[i] + " times 9 is " + finalNumbers [i]);
-        }
+        n.printMsg();
 
     }
 }
