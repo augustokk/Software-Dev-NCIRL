@@ -11,8 +11,7 @@ public class GuessNumber{
     // DECLARE VARIABLES
     private int userNumber;
     private int totalGuessed;
-    private int [] computerNumbers = new int 
-    [5];
+    private int [] computerNumbers = new int [5];
     private String msg;
 
 

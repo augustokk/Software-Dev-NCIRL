@@ -1,47 +1,58 @@
+// Augusto Kuusberg Elias
+// Student Number x24126357
+// Week 11 - LAB
+// Please check the word document for better explanation of the program
 
 public class Athlete extends Person {
 
     // DECLARE VARIABLES
     private String sport;
-    private int energyLevel; // New variable to track energy
+    private int performanceLevel;
+    private int randomNumber;
+    private String choosenSupplement;
 
     // CONSTRUCTOR
+    // Get the name from the superclass Person
+    // All athletes must have a sport
+    // They start with performance level at 100
     public Athlete(String name, String sport) {
-        super(name); // call superclass constructor
+        super(name); 
         this.sport = sport;
-        energyLevel = 100; // full energy at the start
+        performanceLevel = 100; 
     }
 
     // Overridden workOut method
+    // Will include the sport the athlete is doing
+    // Will decrease the performance level after the workout
     @Override
     public void workOut() {
-        // Athlete works out and includes the sport they are doing
-        System.out.println(getName() + " is doing " + sport + " workout but still feels okay.");
-        energyLevel = energyLevel - 20; // Reduce energy level after workout
+        System.out.println(getName() + " is doing " + sport + " workout");
+        performanceLevel = performanceLevel - 50; // Reduce performance level after workout
     }
 
-    // Method to feed the athlete with a random supplement
+    // Method to feed the athlete
+    // Create an array with different supplements
+    // Random select a supplement from the array
+    // That will  increase the performance level
     public void feedAthlete() {
-        String[] supplements = {"Protein Shake", "Energy Bar", "Vitamins", "Carbohydrate Drink", "Electrolytes"};
-        // Randomly select a supplement from the array
-        int randomIndex = (int)(Math.random() * supplements.length);
-        String selectedSupplement = supplements[randomIndex];
-
-        System.out.println(getName() + " is fed with: " + selectedSupplement);
-
-        energyLevel = energyLevel + 20;
+        String[] supplement = {"Protein Shake", "Energy Bar", "Vitamins", "Carbohydrate Drink", "Electrolytes"};
+        randomNumber = (int)(Math.random() * supplement.length);
+        choosenSupplement = supplement[randomNumber];
+        System.out.println(getName() + " eats " + choosenSupplement);
+        performanceLevel = performanceLevel + 50; // Increase performance level after eat
     }
 
-    // New method using nested conditional statements
+    // Method to check how are the levels of performance
+    // Depending on the level number, it will suggest what to do
     public void checkPerformance() {
-            if (energyLevel < 40) {
-                System.out.println(getName() + " needs a break and their energy level is too low! Performance is poor.");
+            if (performanceLevel < 50) {
+                System.out.println(getName() + " performance is poor, the athlete needs to eat to restore performance");
             } 
-            else if (energyLevel >= 40 && energyLevel <= 60) {
-                System.out.println(getName() + " needs a break but can still perform moderately.");
+            else if (performanceLevel == 50) {
+                System.out.println(getName() + " performance is medium, if the athlete eat, he will get a better performance");
             } 
-            else {
-                System.out.println(getName() + " needs a break but their energy level is good! Performance is still strong.");
+            else if (performanceLevel > 50){
+                System.out.println(getName() + " performance is excellent, the athlete can do another workout");
             }
     }
 }
